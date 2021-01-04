@@ -29,8 +29,8 @@ public class PigLatin{
     s = s.toLowerCase();
     String Vowels = "aeiou";
     String[] Diagraphs = {"bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"};
-
     String C01 = s.substring(0,2);
+    
 
     if(-1 != Vowels.indexOf(s.charAt(0)))
     {
