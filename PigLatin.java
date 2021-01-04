@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.*;
 public class PigLatin{
   public static String pigLatinSimple(String s)
   {
@@ -53,14 +54,16 @@ public class PigLatin{
 
   public static String pigLatinBest(String s)
   {
-    if(Character.isDigit(s.charAt(0)))
+    if(!Character.isLetter(s.charAt(0)))
     {
       return s;
     }
+
     char Last_Value = s.charAt(s.length()-1);
     boolean A = Character.isDigit(Last_Value);
     boolean B = Character.isLetter(Last_Value);
-    if(!(A && B))
+
+    if(!(A || B))
     {
       char Punctuation = Last_Value;
       s = s.substring(0, s.length()-1);
@@ -78,6 +81,18 @@ public class PigLatin{
 
   public static void main(String[] args)
   {
-    System.out.println(pigLatin("ThE"));
+    Scanner n = new Scanner (System.in);
+    while (n.hasNextLine())
+    {
+      Scanner n1 = new Scanner (n.nextLine());
+      String Big_Word = "";
+      while(n1.hasNext())
+      {
+        String word = n1.next();
+        Big_Word += pigLatinBest(word) + " ";
+      }
+      System.out.println((Big_Word));
+    }
+
   }
 }

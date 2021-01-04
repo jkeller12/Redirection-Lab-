@@ -12,7 +12,7 @@ public class MakeStars{
         String word = n1.next() + " ";
         Big_Word += word;
       }
-      System.out.println(WordtoStars(Big_Word));
+      System.out.println((Big_Word));
     }
   }
 
