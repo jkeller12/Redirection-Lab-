@@ -29,8 +29,12 @@ public class PigLatin{
     s = s.toLowerCase();
     String Vowels = "aeiou";
     String[] Diagraphs = {"bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"};
-    String C01 = s.substring(0,2);
-    
+
+    String C01 = "";
+    if(s.length() > 2)
+    {
+      C01 = s.substring(0, 2);
+    }
 
     if(-1 != Vowels.indexOf(s.charAt(0)))
     {
@@ -89,7 +93,11 @@ public class PigLatin{
       while(n1.hasNext())
       {
         String word = n1.next();
-        Big_Word += pigLatinBest(word) + " ";
+        Big_Word += pigLatinBest(word);
+        if(n1.hasNext())
+        {
+          Big_Word += " ";
+        }
       }
       System.out.println((Big_Word));
     }
