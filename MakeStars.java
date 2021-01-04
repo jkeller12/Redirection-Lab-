@@ -9,11 +9,16 @@ public class MakeStars{
       String Big_Word = "";
       while(n1.hasNext())
       {
-        String word = n1.next() + " ";
-        Big_Word += word;
+        String word = n1.next();
+        Big_Word += WordtoStars(word);
+        if(n1.hasNext())
+        {
+          Big_Word += " ";
+        }
       }
       System.out.println((Big_Word));
     }
+
   }
 
   public static String WordtoStars(String Word){
